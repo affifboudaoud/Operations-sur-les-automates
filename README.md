@@ -13,3 +13,5 @@ Ce repo contient l'implémentation Java des opérations suivantes:
 **4. Le passage d’un automate non déterministe à un automate déterministe**
 
 **5. La réduction d’un automate**
+
+Pour plus d'information sur les Automates et ces opérations veuillez consulter ce [cours](http://www.i3s.unice.fr/~fedou/wwwUnice/CoursOFI_files/OFI8.pdf).
