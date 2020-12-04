@@ -88,7 +88,8 @@ public class Automate {
 		int i=0;
 		int etat=this.initiale;
 		while(i<s.length()){
-			if(!this.alpha.contains(Character.toString(s.charAt(i)))) return false;
+			if(!this.alpha.contains(Character.toString(s.charAt(i)))) return false; // Si en trouve une lettre qui n'est pas dans l'alphabet on arrete
+			//Sinon, on conitnue la verification 
 			String[] row=this.tab.get(etat);
 			int j;
 			for(j=0;j<row.length;j++) {
@@ -108,7 +109,7 @@ public class Automate {
 		// Le miroir d’un automate
 		List<String[]> newtab=new ArrayList<String[]>();
 		int j=0,r=-1;
-		if(this.finale.size()>1) {
+		if(this.finale.size()>1) { // dans le cas ou il y a plusieur etats finaux
 		for (String[] row : this.tab) {
 			r=row.length;
 	        String[] newrow=new String[row.length+1];
@@ -140,7 +141,7 @@ public class Automate {
 	    }
 		List<Integer> fin=new ArrayList<Integer>();
 		fin.add(this.initiale);
-		Automate n=new Automate(r,newtab,this.alpha,fin);
+		Automate n=new Automate(r,newtab,this.alpha,fin); // construction d'un nouveau Automate avec la meme alphabet 
 		return n;
 		
 	}
@@ -284,8 +285,8 @@ public class Automate {
 		finale.add(2);
 		finale.add(1);
 		Automate m=new Automate(initiale,tabl,alpha,finale);
+		/*
 		//test reduit
-		
 		m=new Automate(initiale,m.reduit(),alpha,finale);
 		for (String[] row : m.tab) {
 	        System.out.println("Row = " + Arrays.toString(row));
@@ -307,6 +308,7 @@ public class Automate {
 		for (String[] row : n.tab) {
 	        System.out.println("Row = " + Arrays.toString(row));
 	    }
+	    */
 	}
 
 }
